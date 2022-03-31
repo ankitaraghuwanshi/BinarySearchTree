@@ -27,7 +27,7 @@ namespace BinarySearchTree
                     if (current.data.CompareTo(value) >= 0)
                     {
                         current = current.leftchild;
-                        if (current== null)
+                        if (current == null)
                         {
                             parent.leftchild = newNode;
                             break;
@@ -36,7 +36,7 @@ namespace BinarySearchTree
                     else
                     {
                         current = current.rightchild;
-                        if (current== null)
+                        if (current == null)
                         {
                             parent.rightchild = newNode;
                             break;
@@ -45,7 +45,7 @@ namespace BinarySearchTree
                 }
             }
         }
-        //Display Root Node.
+
         public void Root()
         {
             do
@@ -55,7 +55,7 @@ namespace BinarySearchTree
             } while (root != null);
         }
 
-        /// Displays Nodes in BST
+
         public void Display(INode<T> parent)
         {
             if (parent != null)
@@ -78,6 +78,26 @@ namespace BinarySearchTree
             else
                 return Size(root.leftchild) + 1 + Size(root.rightchild);
         }
+        public bool Search(INode<T> root, T key)
+        {
 
+            if (root == null)
+            {
+                return false;
+            }
+            if (root.data.CompareTo(key) == 0)
+            {
+                return true;
+            }
+            else if (root.data.CompareTo(key) > 0)
+            {
+                return Search(root.leftchild, key);
+            }
+            else
+            {
+                return Search(root.rightchild, key);
+            }
+
+        }
     }
 }
