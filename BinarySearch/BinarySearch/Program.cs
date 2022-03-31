@@ -4,25 +4,36 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace BinarySearch
+namespace BinarySearchTree
 {
     internal class Program
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("welcome to Binary search tree problem ");
-            ViewBST();
+            Console.WriteLine("Hello welcome to Binary search tree problem ");
+            DisplayBST();
             Console.ReadLine();
         }
 
-        public static void ViewBST()
+        public static void DisplayBST()
         {
-            BinaryTree<int> tree = new BinaryTree<int>();
-            tree.CreateNode(56);
-            tree.CreateNode(30);
-            tree.CreateNode(70);
-            Console.WriteLine("Display Nodes");
-            tree.Display();
+            MyBinaryTree<int> mybinarynode = new MyBinaryTree<int>();
+            mybinarynode.CreateNode(56);
+            mybinarynode.CreateNode(30);
+            mybinarynode.CreateNode(70);
+            mybinarynode.CreateNode(22);
+            mybinarynode.CreateNode(40);
+            mybinarynode.CreateNode(60);
+            mybinarynode.CreateNode(95);
+            mybinarynode.CreateNode(11);
+            mybinarynode.CreateNode(65);
+            mybinarynode.CreateNode(3);
+            mybinarynode.CreateNode(16);
+            mybinarynode.CreateNode(63);
+            mybinarynode.CreateNode(67);
+            mybinarynode.Root();
+            mybinarynode.Display(mybinarynode.root);
+            Console.WriteLine("The number of nodes in BST:{0}", mybinarynode.Size(mybinarynode.root));
         }
     }
 

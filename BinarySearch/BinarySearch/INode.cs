@@ -1,21 +1,23 @@
-﻿using System;
+﻿
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace BinarySearch
+namespace BinarySearchTree
 {
     public class INode<T>
     {
         public T data;
-        public INode<T> leftchild;
-        public INode<T> rightchild;
+        internal INode<T> leftchild;
+        internal INode<T> rightchild;
+
         public INode(T data)
         {
             this.data = data;
-            leftchild = null;
-            rightchild = null;
+            this.leftchild = null;
+            this.rightchild = null;
         }
     }
 }
